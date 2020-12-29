@@ -31,7 +31,7 @@ rm tmp1
 .venv/bin/python reindex.py $1.csv
 
 # Run embedding
-.venv/bin/python src/embedding_clustering.py --dimensions 32 --num-of-walks 5 --random-walk-length 80 --cluster-number 10 --input $1.csv  --embedding-output out/embeddings/$1.csv --log-output out/cluster_means/$1.csv --cluster-mean-output out/logs/$1.csv --assignment-output out/assignment/$1.json
+.venv/bin/python src/embedding_clustering.py --model DeepWalk --dimensions 32 --num-of-walks 5 --random-walk-length 80 --cluster-number 10 --input $1.csv  --embedding-output out/embeddings/$1.csv --log-output out/cluster_means/$1.csv --cluster-mean-output out/logs/$1.csv --assignment-output out/assignment/$1.json
 
 # Save result to gdrive
 cp -rf out/ /content/gdrive/My\ Drive/Projects/
