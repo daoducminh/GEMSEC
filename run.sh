@@ -11,8 +11,15 @@ mkdir -p out/assignment/
 # Download dataset
 wget -q "https://snap.stanford.edu/data/$1.$GZ" && gunzip -k "$1.$GZ" && rm "$1.$GZ"
 
+# Replace whitespace with comma
+sed -i 's/ /,/g' $1.txt
+
+# Add header
+echo -e 'node_1,node_2' | cat - $1.txt > tmp
+mv tmp $1.csv
+
 # Run embedding
-.venv/bin/python src/embedding_clustering.py --dimensions 32 --num-of-walks 20 --random-walk-length 160 --cluster-number 10 --input $1.txt  --embedding-output out/embeddings/$1.csv --log-output out/cluster_means/$1.csv --cluster-mean-output out/logs/$1.csv --assignment-output out/assignment/$1.json
+.venv/bin/python src/embedding_clustering.py --dimensions 32 --num-of-walks 20 --random-walk-length 160 --cluster-number 10 --input $1.csv  --embedding-output out/embeddings/$1.csv --log-output out/cluster_means/$1.csv --cluster-mean-output out/logs/$1.csv --assignment-output out/assignment/$1.json
 
 # Save result to gdrive
 cp -rf out/ /content/gdrive/My\ Drive/Projects/
