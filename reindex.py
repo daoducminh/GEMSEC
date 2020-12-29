@@ -13,7 +13,7 @@ def reindex(filename):
 
 
 def write_mapping(rs, filename, folder):
-    with open(f'{folder}/{filename}_mapping.csv', 'w') as f:
+    with open(f'{folder}/mapping/{filename}', 'w') as f:
         f.write('index,node\n')
         for index, value in enumerate(rs):
             f.write(f'{index},{value}\n')
