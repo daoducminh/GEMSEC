@@ -20,8 +20,9 @@ def write_mapping(rs, filename, folder):
 
 
 def replace_df(rs, df):
-    for index, value in enumerate(rs):
-        df.replace(value, index, inplace=True)
+    a = {v: k for k, v in enumerate(rs)}
+    df['node_1'] = df['node_1'].apply(lambda x: a[x])
+    df['node_2'] = df['node_2'].apply(lambda x: a[x])
     df.to_csv(filename, index=False)
     df.to_csv('out/{0}'.format(filename), index=False)
 
