@@ -3,7 +3,7 @@ import os
 CMD = '!cd GEMSEC && tsp ./run_ex.sh {0} {1}'
 MODELS = [
     'GEMSEC', 'GEMSECWithRegularization',
-    'DeepWalkWithRegularization', 'DeepWalk'
+    'DeepWalk', 'DeepWalkWithRegularization'
 ]
 
 
