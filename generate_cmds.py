@@ -1,10 +1,14 @@
 import os
 
-CMD = '!cd GEMSEC && tsp ./run_ex.sh {0} {1}'
-MODELS = [
+CMDS = (
+    '!cd GEMSEC && ./make_dirs.sh {0} {1}',
+    '!cd GEMSEC && tsp ./run_ex.sh {0} {1}',
+    '!cd GEMSEC && tsp ./save_result.sh {0} {1}'
+)
+MODELS = (
     'GEMSEC', 'GEMSECWithRegularization',
     'DeepWalk', 'DeepWalkWithRegularization'
-]
+)
 
 
 def get_dataset(folder):
@@ -16,6 +20,8 @@ def get_dataset(folder):
 if __name__ == "__main__":
     data = get_dataset('data/')
     for m in MODELS:
-        for d in data:
-            print(CMD.format(d, m))
+        for c in CMDS:
+            for d in data:
+                print(c.format(d, m))
+            print('----')
         print('============')
