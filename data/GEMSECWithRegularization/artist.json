@@ -1,0 +1,95 @@
+{
+    "cluster_quality": [
+        [
+            1,
+            0.32652936278145017
+        ],
+        [
+            2,
+            0.30155864976176533
+        ],
+        [
+            3,
+            0.29889867195659336
+        ],
+        [
+            4,
+            0.2990697878263476
+        ],
+        [
+            5,
+            0.29834561043051927
+        ]
+    ],
+    "params": {
+        "distortion": 0.75,
+        "model": "GEMSECWithRegularization",
+        "walker": "first",
+        "dump_matrices": true,
+        "num_of_walks": 5,
+        "dimensions": 16,
+        "annealing_factor": 1,
+        "regularization_noise": 1e-08,
+        "negative_sample_number": 10,
+        "random_walk_length": 80,
+        "P": 1,
+        "assignment_output": "out/assignment/artist.json",
+        "input": "data/artist_edges.csv",
+        "embedding_output": "out/embeddings/artist.csv",
+        "final_gamma": 0.5,
+        "cluster_number": 20,
+        "overlap_weighting": "normalized_overlap",
+        "initial_gamma": 0.1,
+        "window_size": 5,
+        "initial_learning_rate": 0.01,
+        "lambd": 0.0625,
+        "Q": 1,
+        "log_output": "out/logs/artist.json",
+        "cluster_mean_output": "out/cluster_means/artist.csv",
+        "minimal_learning_rate": 0.001
+    },
+    "losses": [
+        [
+            1,
+            2.2550123439358565
+        ],
+        [
+            2,
+            2.2303908402685195
+        ],
+        [
+            3,
+            2.2386443280603205
+        ],
+        [
+            4,
+            2.2189829384744915
+        ],
+        [
+            5,
+            2.1826329167663467
+        ]
+    ],
+    "times": [
+        [
+            1,
+            988.460120677948
+        ],
+        [
+            2,
+            796.9309022426605
+        ],
+        [
+            3,
+            945.5133111476898
+        ],
+        [
+            4,
+            1000.126179933548
+        ],
+        [
+            5,
+            1057.990844488144
+        ]
+    ]
+}

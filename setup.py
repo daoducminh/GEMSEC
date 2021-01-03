@@ -24,6 +24,7 @@ setup(
         'jsonschema==2.6.0',
         'texttable==1.5.0',
         'python-louvain==0.11',
-        'scikit-learn'
+        'scikit-learn',
+        'matplotlib'
     ]
 )
